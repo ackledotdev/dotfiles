@@ -1,9 +1,65 @@
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = Dave Eddy
-	email = dave@daveeddy.com
-[color]
-	ui = auto
-[push]
-	default = matching
+	email = ackledotdev@gmail.com
+	name = Akhil Pillai
+	signingKey = 398D4B87E90D1C00
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[init]
+	defaultBranch = master
 [pull]
 	rebase = false
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[advice]
+	addIgnoredFile = false
+[core]
+	editor = /usr/bin/vim
+[alias]
+	ck = checkout
+	chk = checkout
+	sw = switch
+	in = pull
+	out = push
+	up = push
+	sh = push
+	ll = pull
+	stat = status
+	st = status -s
+	ca = commit -as
+	cam = commit -asm
+	cm = commit -sm
+	mg = merge
+	b = branch
+	a = add
+	r = remote
+	rst = reset
+	dld = log --no-ext-diff
+	c = clone
+	f = fetch
+	conf = config --global
+	confed = config edit --global
+	confd = config edit --global
+	alias = config edit --global
+	h = help
+	dsd = show --no-ext-diff
+	l = log
+	s = show
+	d = diff
+	dif = diff --no-ext-diff
+[diff]
+	external = difft
+[gpg]
+	format = openpgp
+[credential]
+	helper = cache
