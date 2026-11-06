@@ -3,6 +3,8 @@ Configuration Files
 
 My custom config files and rcs.
 
+Cloned from Dave Eddy's dotfiles repository and reconfigured.
+
 Installation
 ------------
 
