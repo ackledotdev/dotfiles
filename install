@@ -6,6 +6,7 @@
 # Author: Dave Eddy <dave@daveeddy.com>
 # Date: May 25, 2012
 # License: MIT
+# Edited: November 06, 2026 by Akhil Pillai
 
 # verbose ln, because `ln -v` is not portable
 symlink() {
