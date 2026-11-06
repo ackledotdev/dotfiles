@@ -38,7 +38,8 @@ alias brul='brup && brcl'
 
 alias y='yazi'
 
-alias b='bc -l'
+alias bc='bc -l'
+alias bcl='\bc'
 
 alias wlc='wl-copy'
 alias wlp='wl-paste'

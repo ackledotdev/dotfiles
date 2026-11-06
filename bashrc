@@ -56,6 +56,7 @@ shopt -s cdspell
 shopt -s checkwinsize
 shopt -s extglob
 shopt -s globstar
+shopt -s dotglob
 # Bash Version >= 4
 shopt -s autocd    2>/dev/null || true
 shopt -s direxpand 2>/dev/null || true
@@ -301,7 +302,6 @@ untiny() {
 # load tools
 
 eval "$(pay-respects bash --alias fuck)"
-eval "$(zoxide init bash)"
 eval "$(ngm shell)"
 eval "$(starship init bash)"
 
@@ -315,6 +315,8 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 # This ^ loads nvm bash_completion
+
+eval "$(zoxide init bash)"
 
 # return success no matter what
 true
