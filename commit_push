@@ -3,8 +3,11 @@
 git add *
 
 changed_files=$(git diff --staged --name-only --ignore-submodules)
+m1="cli: $(date +%Y-%m-%d) - $(wc -l <<< $changed_files) files changed"
+m2="updates to: ${changed_files//$'\n'/', '}"
 
-git commit -S -m "cli: $(date +%Y-%m-%d) - $(wc -l <<< $changed_files) files changed" \
-	-m "updates to: ${changed_files//$'\n'/', '}"
+git commit -S -m "$m1" -m "$m2"
 
-git push
+echo "$m2"
+
+git push -q
