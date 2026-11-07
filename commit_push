@@ -12,4 +12,4 @@ echo "$m2"
 
 git push -q
 
-echo "Pushed to branch $(gt branch --show-current) of remote $(git remote get-url origin)"
+echo "Pushed to branch $(git branch --show-current) of remote $(git remote get-url origin)"
