@@ -6,3 +6,5 @@ changed_files=$(git diff --staged --name-only --ignore-submodules)
 
 git commit -S -m "cli: $(date +%Y-%m-%d) - $(wc -l <<< $changed_files) files changed" \
 	-m "updates to: ${changed_files//$'\n'/', '}"
+
+git push
