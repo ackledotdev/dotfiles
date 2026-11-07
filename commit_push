@@ -11,3 +11,5 @@ git commit -S -m "$m1" -m "$m2"
 echo "$m2"
 
 git push -q
+
+echo "Pushed to remote $(git remote get-url origin)"
