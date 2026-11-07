@@ -4,7 +4,7 @@ alias extip='curl -sS https://ackle.dev/apis/ip'
 
 alias si='sudo -i'
 
-alias cd='z'
+#alias cd='z'
 
 alias d='clear ; ckhyfetch'
 
