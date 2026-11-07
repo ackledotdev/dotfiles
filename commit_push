@@ -4,6 +4,6 @@ git add *
 
 changed_files=$(git diff --staged --name-only --ignore-submodules)
 
-git commit -aSm "cli: $(date +%Y-%m-%d) - $(wc -l <<< $changed_files) files changed" \
+git commit -S -mm "cli: $(date +%Y-%m-%d) - $(wc -l <<< $changed_files) files changed" \
 	-m "updates to: ${changed_files//$'\n'/', '}"
 "
