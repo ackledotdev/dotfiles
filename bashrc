@@ -301,6 +301,11 @@ untiny() {
 
 # load tools
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# This ^ loads nvm bash_completion
+
 eval "$(pay-respects bash --alias fuck)"
 eval "$(ngm shell)"
 eval "$(starship init bash)"
@@ -310,11 +315,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # 	HOMEBREW_PREFIX="$(brew --prefix)"
 # 	source "${HOMEBREW_PREFIX}/etc/bash_completion"
 # fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-# This ^ loads nvm bash_completion
 
 eval "$(zoxide init bash)"
 
