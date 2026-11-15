@@ -72,7 +72,7 @@ alias clc='lc | wl-copy'
 alias vialias='vi ~/.bash_aliases'
 alias viprofile='vi ~/.bash_profile'
 alias virc='vi ~/.bashrc'
-alias vifn='vi ~/.funcs.bash'
+alias vifn='vi ~/.bash_funcs'
 
 alias vnk='vi ~/.config/niri/config.kdl'
 alias nv='niri validate'

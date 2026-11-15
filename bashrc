@@ -59,7 +59,7 @@ shopt -s globstar
 shopt -s dotglob
 # Bash Version >= 4
 shopt -s autocd    2>/dev/null || true
-shopt -s direxpand 2>/dev/null || true
+#shopt -s direxpand 2>/dev/null || true
 shopt -s dirspell  2>/dev/null || true
 
 # because `master` is sometimes `main` (or others), these must be functions.
