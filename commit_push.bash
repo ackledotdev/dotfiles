@@ -9,14 +9,13 @@
 git add *
 
 changed_files=$(git diff --staged --name-only --ignore-submodules)
-changed_file_count=$(wc -l <<< $changed_files)
 
 if [[ -z $changed_files ]]; then
 	echo "No changes to commit."
 	exit 0
 fi
 
-m1="cli: $(date +%Y-%m-%d) - $changed_file_count file(s) changed"
+m1="cli: $(date +%Y-%m-%d) - $(wc -l <<< $changed_files) file(s) changed"
 m2="updates to: ${changed_files//$'\n'/', '}"
 
 git commit -S -m "$m1" -m "$m2"
