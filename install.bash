@@ -25,14 +25,6 @@ symlink() {
 	ln -nsf "$@"
 }
 
-prompt_ok () {
-	read -n 1 -p "Is this ok [y/N]: " input
-	if [[ ! $input =~ ^[Yy]$ ]]; then
-		echo "Installation cancelled."
-		exit 1
-	fi
-}
-
 echo "Initializing git submodules..."
 git submodule init -q
 git submodule update -q
@@ -78,7 +70,16 @@ if [[ -n $EXTERNAL_INSTALL ]]; then
 		"bics will be installed to ${F_UNDERLINED}${C_PINK}~/.bics${NO_FORMAT}," \
 		"and ${F_BOLD}any existing bics plugins will be overwritten.${NO_FORMAT}"
 
-	prompt_ok
+	if [[ -r /dev/tty ]]; then
+		read -n 1 -p "Is this ok [y/N]: " input </dev/tty
+		if [[ ! $input =~ ^[Yy]$ ]]; then
+			echo "Installation cancelled. Run 'make install' to finish setup." >&2
+			exit 1
+		fi
+	else
+		echo "No terminal available; cannot prompt for confirmation. Run 'make install' to finish setup." >&2
+		exit 1
+	fi
 fi
 
 for f in "${dotfiles[@]}"; do
