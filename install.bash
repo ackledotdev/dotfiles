@@ -15,7 +15,6 @@ C_AQUA="\033[38;5;14m"
 C_LIME="\033[38;5;10m"
 C_PINK="\033[38;5;13m"
 
-
 if [[ "$1" == "--from-ext" ]]; then
 	EXTERNAL_INSTALL=1
 fi
@@ -71,10 +70,12 @@ if [[ -n $EXTERNAL_INSTALL ]]; then
 	for f in "${configs[@]}"; do
 		echo "  ~/.config/$f"
 	done
-	echo -e "${NO_FORMAT}${F_BOLD}Any existing files will be overwritten.${NO_FORMAT}"
+	echo -e "${NO_FORMAT}${F_BOLD}Any existing" \
+					"files will be overwritten.${NO_FORMAT}"
 
-	echo -e "bics will be installed to ${F_UNDERLINED}${C_PINK}~/.bics${NO_FORMAT}, and" \
-					"${F_BOLD}any existing bics plugins will be overwritten.${NO_FORMAT}"
+	echo -e \
+		"bics will be installed to ${F_UNDERLINED}${C_PINK}~/.bics${NO_FORMAT}," \
+		"and ${F_BOLD}any existing bics plugins will be overwritten.${NO_FORMAT}"
 
 	prompt_ok
 fi

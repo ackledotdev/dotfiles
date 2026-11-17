@@ -1,6 +1,8 @@
 Configuration Files
 ===================
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ackledotdev/dotfiles/ci.yml?branch=master&label=format)
+
 My custom config files and rcs.
 
 Cloned from Dave Eddy's dotfiles repository and reconfigured.
@@ -8,11 +10,20 @@ Cloned from Dave Eddy's dotfiles repository and reconfigured.
 Installation
 ------------
 
-Inside the repository you can run `install` to place the configs in `~`.
-This will symlink them from the repository, so you can easily update with `git
-pull`.
+Quick install (designed for new/remote machines):
+```
+curl -s --show-error -L https://ackle.dev/scripts/dotfiles/install.bash | bash
+```
+This script runs the install script (described below) __with a confirmation prompt__.
 
-This also does some basic setup that you may or may not want. Read the script.
+Inside the repository you can run `./install.bash` or the Makefile script to
+place the configs in `~`. This will symlink them from the repository, so you
+can easily update with `git pull`.
+
+This also does some basic setup (i.e. installing [bics](https://github.com/bahamas10/bics))
+that you may or may not want. Read the script.
+
+**Caution: Running the install script overwrites files without prompting.**
 
 ```
 $ make install

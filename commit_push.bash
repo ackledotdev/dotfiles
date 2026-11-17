@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+#
+# Commit and push changes with an automated commit message.
+#
+# Author: Akhil Pillai @ackledotdev
+# Created: November 07, 2026
+# License: MIT
 
 git add *
 
