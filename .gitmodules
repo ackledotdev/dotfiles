@@ -1,6 +1,6 @@
 [submodule "bics-plugins/bash-cdstack"]
 	path = bics-plugins/bash-cdstack
-	url = https://github.com/bahamas10/bash-cdstack.git
+	url = https://github.com/ackledotdev/bash-cdstack.git
 # [submodule "bics-plugins/bash-analysis"]
 # 	path = bics-plugins/bash-analysis
 # 	url = https://github.com/bahamas10/bash-analysis.git
