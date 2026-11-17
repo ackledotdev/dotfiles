@@ -1,0 +1,10 @@
+[Unit]
+Description=tpnoisie - ThinkPad TrackPoint noise maker
+After=default.target
+
+[Service]
+ExecStart=/home/ackle/.cargo/bin/tpnoisie auto /home/ackle/git/ackledotdev/tpnoisie/sounds/ ogg
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

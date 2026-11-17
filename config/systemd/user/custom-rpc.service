@@ -1,0 +1,11 @@
+[Unit]
+Description=Custom RPC – Set custom Discord Rich Presence via Remote Procedure Calls
+After=default.target
+
+[Service]
+WorkingDirectory=/home/ackle/git/ackledotdev/custom-rpc
+ExecStart=/home/ackle/git/ackledotdev/custom-rpc/systemd-start.sh
+Restart=always
+
+[Install]
+WantedBy=default.target
