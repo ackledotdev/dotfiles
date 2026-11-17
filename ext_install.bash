@@ -8,7 +8,7 @@
 # License: MIT
 
 echo "Cloning repository..."
-git clone --recurse-submodules https://github.com/ackledotdev/dotfiles.git
+git clone https://github.com/ackledotdev/dotfiles.git
 
 cd dotfiles || echo "Failed to cd into cloned directory." && exit 1
 
