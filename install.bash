@@ -26,7 +26,7 @@ symlink() {
 }
 
 prompt_ok () {
-	read -r -n 1 -p "Is this ok [y/N]: " input
+	read -n 1 -p "Is this ok [y/N]: " input
 	if [[ ! $input =~ ^[Yy]$ ]]; then
 		echo "Installation cancelled."
 		exit 1
