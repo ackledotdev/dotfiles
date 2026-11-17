@@ -30,9 +30,21 @@ dotfiles=(
 	# vim
 )
 
+# Custom not-(~/.*) dotfiles
+declare -A custom_dotfiles=(
+	[config/niri/config.kdl]=".config/niri/config.kdl"
+)
+
 for f in "${dotfiles[@]}"; do
 	[[ -d ~/.$f && ! -L ~/.$f ]] && rm -r ~/."$f"
 	symlink "$PWD/$f" ~/."$f"
+done
+
+for sourcepath in "${!custom_dotfiles[@]}"; do
+	targetpath="${custom_dotfiles[$sourcepath]}"
+	[[ -d ~/$targetpath && ! -L ~/$targetpath ]] && rm -r ~/"$targetpath"
+	mkdir -p ~/"$(dirname "$targetpath")"
+	symlink "$PWD/$sourcepath" ~/"$targetpath"
 done
 
 # Setup bics
