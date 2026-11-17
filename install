@@ -33,6 +33,7 @@ dotfiles=(
 # Custom not-(~/.*) dotfiles
 declare -A custom_dotfiles=(
 	[config/niri/config.kdl]=".config/niri/config.kdl"
+	[config/noctalia/settings.json]=".config/noctalia/settings.json"
 	[config/foot/foot.ini]=".config/foot/foot.ini"
 	[config/fastfetch/config.jsonc]=".config/fastfetch/config.jsonc"
 	[config/hyfetch.json]=".config/hyfetch.json"
