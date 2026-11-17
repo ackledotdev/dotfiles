@@ -14,7 +14,7 @@ Installation
 
 Quick install (designed for new/remote machines):
 ```bash
-$ curl -Ls --show-error https://ackle.dev/scripts/dotfiles/install.bash | bash
+$ curl -Ls --show-error https://ackle.dev/scripts/dotfiles/install | bash
 ```
 This script runs the install script (described below) __with a confirmation prompt__.
 
