@@ -7,9 +7,11 @@
 # Created: November 17, 2026
 # License: MIT
 
+echo "Cloning repository..."
 git clone --recurse-submodules https://github.com/ackledotdev/dotfiles.git
 
 cd dotfiles || echo "Failed to cd into cloned directory." && exit 1
 
 # run the install script with confirmation
+echo "Running install script..."
 make install-ext
