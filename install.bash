@@ -33,8 +33,9 @@ prompt_ok () {
 	fi
 }
 
-git submodule init
-git submodule update
+echo "Initializing git submodules..."
+git submodule init -q
+git submodule update -q
 
 # Link dotfiles
 dotfiles=(
@@ -62,7 +63,7 @@ declare -a configs=(
 )
 
 if [[ -n $EXTERNAL_INSTALL ]]; then
-	echo -e "The following files will be installed to $HOME:$C_LIME"
+	echo && echo -e "The following files will be installed to $HOME:$C_LIME"
 	for f in "${dotfiles[@]}"; do
 		echo "  ~/.$f"
 	done

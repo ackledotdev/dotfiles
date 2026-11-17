@@ -8,10 +8,10 @@
 # License: MIT
 
 echo "Cloning repository..."
-git clone https://github.com/ackledotdev/dotfiles.git
+git clone -q https://github.com/ackledotdev/dotfiles.git
 
 cd dotfiles || (echo "Failed to cd into cloned directory." && exit 1)
 
 # run the install script with confirmation
-echo "Running install script..."
+echo && echo "Running install script..."
 make install-ext
