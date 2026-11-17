@@ -1,24 +1,15 @@
 [submodule "bics-plugins/bash-cdstack"]
 	path = bics-plugins/bash-cdstack
 	url = https://github.com/ackledotdev/bash-cdstack.git
-# [submodule "bics-plugins/bash-analysis"]
-# 	path = bics-plugins/bash-analysis
-# 	url = https://github.com/bahamas10/bash-analysis.git
+
 [submodule "bics-plugins/bash-interactivity"]
 	path = bics-plugins/bash-interactivity
 	url = https://github.com/bahamas10/bash-interactivity.git
+
 [submodule "bics-plugins/tabstop"]
 	path = bics-plugins/tabstop
 	url = https://github.com/bahamas10/tabstop.git
+
 [submodule "bics-plugins/bash-path"]
 	path = bics-plugins/bash-path
 	url = https://github.com/bahamas10/bash-path.git
-# [submodule "bics-plugins/bash-vardump"]
-# 	path = bics-plugins/bash-vardump
-# 	url = https://github.com/bahamas10/bash-vardump.git
-# [submodule "bics-plugins/bash-stacktrace"]
-# 	path = bics-plugins/bash-stacktrace
-# 	url = https://github.com/bahamas10/bash-stacktrace.git
-# [submodule "vim/bundle/vim-flavored-markdown"]
-# 	path = vim/bundle/vim-flavored-markdown
-# 	url = https://github.com/jtratner/vim-flavored-markdown.git
