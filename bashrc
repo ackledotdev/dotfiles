@@ -23,7 +23,7 @@ fi
 # -- Environment
 export SYSTEMD_PAGER=
 export EDITOR='vim'
-export GREP_COLOR='1;36'
+export GREP_COLORS='mt=1;36'
 # export LSCOLORS='ExGxbEaECxxEhEhBaDaCaD'
 export MANPAGER='less'
 export PAGER='less'
