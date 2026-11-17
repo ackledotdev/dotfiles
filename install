@@ -8,10 +8,30 @@
 # License: MIT
 # Edited: November 06, 2026 onward by Akhil Pillai
 
+NO_FORMAT="\033[0m"
+F_BOLD="\033[1m"
+F_UNDERLINED="\033[4m"
+C_AQUA="\033[38;5;14m"
+C_LIME="\033[38;5;10m"
+C_PINK="\033[38;5;13m"
+
+
+if [[ "$1" == "--from-ext" ]]; then
+	EXTERNAL_INSTALL=1
+fi
+
 # verbose ln, because `ln -v` is not portable
 symlink() {
 	printf '%55s -> %s\n' "${1/#$PWD/\.}" "${2/#$HOME/\~}"
 	ln -nsf "$@"
+}
+
+prompt_ok () {
+	read -r -n 1 -p "Is this ok [y/N]: " input
+	if [[ ! $input =~ ^[Yy]$ ]]; then
+		echo "Installation cancelled."
+		exit 1
+	fi
 }
 
 git submodule init
@@ -31,27 +51,44 @@ dotfiles=(
 )
 
 # Custom not-(~/.*) dotfiles
-declare -A custom_dotfiles=(
-	[config/niri/config.kdl]=".config/niri/config.kdl"
-	[config/noctalia/settings.json]=".config/noctalia/settings.json"
-	[config/foot/foot.ini]=".config/foot/foot.ini"
-	[config/fastfetch/config.jsonc]=".config/fastfetch/config.jsonc"
-	[config/hyfetch.json]=".config/hyfetch.json"
-	[config/starship.toml]=".config/starship.toml"
-	[config/systemd/user/tpnoisie.service]=".config/systemd/user/tpnoisie.service"
-	[config/systemd/user/custom-rpc.service]=".config/systemd/user/custom-rpc.service"
+declare -a configs=(
+	"fastfetch/config.jsonc"
+	"foot/foot.ini"
+	"hyfetch.json"
+	"niri/config.kdl"
+	"noctalia/settings.json"
+	"starship.toml"
+	"systemd/user/custom-rpc.service"
+	"systemd/user/tpnoisie.service"
 )
+
+if [[ -n $EXTERNAL_INSTALL ]]; then
+	echo -e "The following files will be installed to $HOME:$C_LIME"
+	for f in "${dotfiles[@]}"; do
+		echo "  ~/.$f"
+	done
+	printf "%b" "$NO_FORMAT$C_AQUA"
+	for f in "${configs[@]}"; do
+		echo "  ~/.config/$f"
+	done
+	echo -e "${NO_FORMAT}${F_BOLD}Any existing files will be overwritten.${NO_FORMAT}"
+
+	echo -e "bics will be installed to ${F_UNDERLINED}${C_PINK}~/.bics${NO_FORMAT}, and" \
+					"${F_BOLD}any existing bics plugins will be overwritten.${NO_FORMAT}"
+
+	prompt_ok
+fi
 
 for f in "${dotfiles[@]}"; do
 	[[ -d ~/.$f && ! -L ~/.$f ]] && rm -r ~/."$f"
 	symlink "$PWD/$f" ~/."$f"
 done
 
-for sourcepath in "${!custom_dotfiles[@]}"; do
-	targetpath="${custom_dotfiles[$sourcepath]}"
-	[[ -d ~/$targetpath && ! -L ~/$targetpath ]] && rm -r ~/"$targetpath"
-	mkdir -p ~/"$(dirname "$targetpath")"
-	symlink "$PWD/$sourcepath" ~/"$targetpath"
+for f in "${configs[@]}"; do
+	[[ -d ~/.config/$f && ! -L ~/.config/$f ]] \
+		&& rm -r ~/.config/"$f"
+	mkdir -p ~/.config/"$(dirname "$f")"
+	symlink "$PWD/config/$f" ~/.config/"$f"
 done
 
 # Setup bics
