@@ -10,7 +10,7 @@
 echo "Cloning repository..."
 git clone https://github.com/ackledotdev/dotfiles.git
 
-cd dotfiles || echo "Failed to cd into cloned directory." && exit 1
+cd dotfiles || (echo "Failed to cd into cloned directory." && exit 1)
 
 # run the install script with confirmation
 echo "Running install script..."
