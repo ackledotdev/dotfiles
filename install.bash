@@ -73,11 +73,11 @@ if [[ -n $EXTERNAL_INSTALL ]]; then
 	if [[ -r /dev/tty ]]; then
 		read -n 1 -p "Is this ok [y/N]: " input </dev/tty
 		if [[ ! $input =~ ^[Yy]$ ]]; then
-			echo "Installation cancelled. Run 'make install' to finish setup." >&2
+			echo "Installation cancelled. Run 'make install' in the dotfiles directory to finish setup." >&2
 			exit 1
 		fi
 	else
-		echo "No terminal available; cannot prompt for confirmation. Run 'make install' to finish setup." >&2
+		echo "No terminal available; cannot prompt for confirmation. Run 'make install' in the dotfiles directory to finish setup." >&2
 		exit 1
 	fi
 fi
