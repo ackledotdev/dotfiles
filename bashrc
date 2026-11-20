@@ -295,10 +295,6 @@ untiny() {
 	return 0
 }
 
-# Load external files
-. ~/.bash_aliases 2>/dev/null
-. ~/.bashrc.local 2>/dev/null
-
 # load tools
 
 export NVM_DIR="$HOME/.nvm"
