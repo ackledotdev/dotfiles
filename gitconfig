@@ -36,10 +36,10 @@
 	ll = pull
 	stat = status
 	st = status -s
-	c = commit -S
-	ca = commit -Sa
-	cam = commit -Sam
-	cm = commit -Sm
+	c = commit
+	ca = commit -a
+	cam = commit -am
+	cm = commit -m
 	mg = merge
 	b = branch
 	a = add
