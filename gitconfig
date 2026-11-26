@@ -64,3 +64,5 @@
 	format = openpgp
 [credential]
 	helper = cache
+[push]
+	autoSetupRemote = true
