@@ -320,6 +320,6 @@ true
 # fnm
 FNM_PATH="/home/ackle/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "$(fnm env --shell bash)"
+	export PATH="$FNM_PATH:$PATH"
+	eval "$(fnm env --shell bash)"
 fi
