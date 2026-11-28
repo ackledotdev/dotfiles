@@ -316,3 +316,10 @@ eval "$(zoxide init bash)"
 
 # return success no matter what
 true
+
+# fnm
+FNM_PATH="/home/ackle/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell bash)"
+fi
